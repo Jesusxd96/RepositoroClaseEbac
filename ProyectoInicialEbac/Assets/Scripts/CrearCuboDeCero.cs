@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CrearCuboDeCero : MonoBehaviour
 {
+    //Creando un Cubo, se necesitan vertices y triangulos
     GameObject objToSpawn;
     Vector3[] vertices = {
         new Vector3(0,0,0), //vertice 0
@@ -32,22 +33,22 @@ public class CrearCuboDeCero : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        objToSpawn = new GameObject("Nuestro Primer Cubo");
-        objToSpawn.AddComponent<MeshFilter>();
+        objToSpawn = new GameObject("Nuestro Primer Cubo"); //Se crea el gameobject
+        objToSpawn.AddComponent<MeshFilter>(); //Se le agrega un meshfilter al objeto a crear
         var meshFilter = objToSpawn.GetComponent<MeshFilter>().mesh;
-        meshFilter.Clear();
+        meshFilter.Clear();//Se limpia el meshfilter
+        /*Se le hace referencia a los vertices y triangulos determinados arriba*/
         meshFilter.vertices = vertices;
         meshFilter.triangles = triangulos;
         meshFilter.Optimize();
         meshFilter.RecalculateNormals();
-        objToSpawn.AddComponent<BoxCollider>();
+        objToSpawn.AddComponent<BoxCollider>();//Se le agrega el componente de BoxCollider
         var boxCollider = objToSpawn.GetComponent<BoxCollider>();
-        boxCollider.center = new Vector3(0.5f, 0.5f, 0.5f);
-        objToSpawn.AddComponent<MeshRenderer>();
-        var meshRendererMaterial = objToSpawn.GetComponent<MeshRenderer>().material;
-        meshRendererMaterial.color = Color.white;
-        objToSpawn.transform.position = Vector3.one;
-
+        boxCollider.center = new Vector3(0.5f, 0.5f, 0.5f);//Se le otorga un centro al box collider
+        objToSpawn.AddComponent<MeshRenderer>();//Se le agrega un Renderer para que se vea el gameobject
+        var meshRendererMaterial = objToSpawn.GetComponent<MeshRenderer>().material;//Se le otorga un material al renderer
+        meshRendererMaterial.color = Color.white;//Color para dicho material
+        objToSpawn.transform.position = Vector3.one;//Se le otorga una posicion inicial.
     }
 
     // Update is called once per frame
