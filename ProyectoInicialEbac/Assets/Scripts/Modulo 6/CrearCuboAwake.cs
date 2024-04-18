@@ -34,7 +34,7 @@ public class CrearCuboAwake : MonoBehaviour
     [SerializeField] private GameObject objACrear;
     void Awake()
     {
-        objToSpawn = new GameObject("Nuestro Primer Cubo"); //Se crea el gameobject
+        objToSpawn = new GameObject("CuboAwake"); //Se crea el gameobject
         objToSpawn.AddComponent<MeshFilter>(); //Se le agrega un meshfilter al objeto a crear
         var meshFilter = objToSpawn.GetComponent<MeshFilter>().mesh;
         meshFilter.Clear();//Se limpia el meshfilter
@@ -48,7 +48,8 @@ public class CrearCuboAwake : MonoBehaviour
         boxCollider.center = new Vector3(0.5f, 0.5f, 0.5f);//Se le otorga un centro al box collider
         objToSpawn.AddComponent<MeshRenderer>();//Se le agrega un Renderer para que se vea el gameobject
         var meshRendererMaterial = objToSpawn.GetComponent<MeshRenderer>().material;//Se le otorga un material al renderer
-        meshRendererMaterial.color = Color.white;//Color para dicho material
+        //meshRendererMaterial.color = Color.white;//Color para dicho material
+        meshRendererMaterial.color = Color.HSVToRGB(Random.value, Random.value, Random.value);//Color para dicho material
         /*Codigo nuevo abajo - se le agregara fisica*/
         objToSpawn.AddComponent<Rigidbody>();
         var rigidBody = objToSpawn.GetComponent<Rigidbody>().useGravity;//Se crea una variable tipo rigidBody
