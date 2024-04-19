@@ -8,6 +8,17 @@ public class VariablesBooleanas : MonoBehaviour
     bool variable2;
     bool variable3;
     int valor1 = 5;
+    int limiteInferior = -5;
+    int limiteSuperior = 5;
+    enum SeleccionColor
+    {
+        rojo,
+        verde,
+        azul,
+        blanco,
+        gris
+    };
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +41,42 @@ public class VariablesBooleanas : MonoBehaviour
         else if ((variable1 && variable2) || variable3){
             Debug.Log("La operacion 3 dio resultado verdadero");
         }
+        //Esto pasa despues de dar los mensajes anteriores
+        valor1 = Random.Range(limiteInferior, limiteSuperior);
+        Debug.Log(valor1);
+        
+        /*if(valor1 >= 0){
+            Debug.Log("El resultado es positivo.");
+        }
+        else{
+            Debug.Log("El resultado es negativo");
+        }*/
+
+        string resultado = (valor1 >= 0) ? "el valor es positivo" : "el valor es negativo";
+        Debug.Log(resultado);
+        /*switch (valor1)
+        {//Como no son numeros como tal lo del enum, se castea con el int.
+            case (int)SeleccionColor.rojo:
+                Debug.Log("El color seleccionado es el rojo");
+                break;
+            case (int)SeleccionColor.verde:
+                Debug.Log("El color seleccionado es el verde");
+                break;
+            case (int)SeleccionColor.azul:
+                Debug.Log("El color seleccionado es el azul");
+                break;
+            case (int)SeleccionColor.blanco:
+                Debug.Log("El color seleccionado es el blanco");
+                break;
+            case (int)SeleccionColor.gris:
+                Debug.Log("El color seleccionado es el gris");
+                break;
+            default:
+                Debug.Log("Ningun color valido se selecciono");
+                break;
+        }
+        */
+
     }
 
     // Update is called once per frame
