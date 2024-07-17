@@ -20,7 +20,7 @@ public class VariableCharString : MonoBehaviour
         string miSegundoString = miString.Replace('e', 'E');//Cambiar las "e" a "E"
         //string miTercerString = miString.ToUpper();//todo el strin se cambia a mayuscula
         string miTercerString = miString + " " + miSegundoString;
-        string ejemploEscape = "C:\\Users\\Diego\n Documentos";
+        //string ejemploEscape = "C:\\Users\\Diego\n Documentos";
 
         miCaracter = miString[13];
 
