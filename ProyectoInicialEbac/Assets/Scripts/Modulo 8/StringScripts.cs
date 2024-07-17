@@ -13,14 +13,20 @@ public class StringScripts : MonoBehaviour
     string s1, s2, s3;
     string[] nombreArray;
 
+    /*-----------------------------------PARTE 2------------------------------------------*/
+    //2 Variables STRING que guarde valores numericos de miles y pasarlas a tipos de datos num.
+    string numero1="1500";
+    string numero2="7830";
+    int res;
     // Start is called before the first frame update
     void Start()
     {
         //El N4 es para los decimales aparentemente
         flotanteString = num.ToString("N4");//El string ahora contiene el numero flotante
         Debug.Log("El numero impreso es: " + flotanteString);
-
         ImprimirNombre();
+        StringOperations();
+        Debug.Log("El resultado de la operacion de strings es: " + res);
     }
 
     // Update is called once per frame
@@ -44,5 +50,12 @@ public class StringScripts : MonoBehaviour
         Debug.Log("Substring 1: " + s1);
         Debug.Log("Substring 2: " + s2);
         Debug.Log("Substring 3: " + s3);
+    }
+    void StringOperations()
+    {
+        int temp1, temp2;
+        int.TryParse(numero1,out temp1);
+        int.TryParse(numero2, out temp2);
+        res = temp1 + temp2;
     }
 }
