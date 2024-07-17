@@ -21,6 +21,9 @@ public class StringScripts : MonoBehaviour
 
     public string oracionSimple = "Esto es una oracion";
 
+    //Esta oracion se podra modificar en el editor y se le quitaran los primeros 5 caracteres
+    public string oracionGuardada = "Hola soy Goku!";
+    //string aBorrar;
 
     /*--------------------------------------------------------------------------------------*/
 
@@ -35,6 +38,7 @@ public class StringScripts : MonoBehaviour
         Debug.Log("El resultado de la operacion de strings es: " + res);
 
         ImprimirOracion();
+        RemoverCaracteres();
     }
 
     void ImprimirNombre()
@@ -73,4 +77,12 @@ public class StringScripts : MonoBehaviour
         }
         Debug.Log("La nueva string es: " + nuevaOracion);
     }
+
+    void RemoverCaracteres()
+    {
+        string oracionEditada;
+        oracionEditada = oracionGuardada.Remove(0, 5);
+        Debug.Log("La oracion ya modificada es: " + oracionEditada);
+    }
+
 }

@@ -315,6 +315,8 @@ MonoBehaviour:
   num: 65.97328
   flotanteString: 
   nombre: Jesus Eduardo Lara
+  oracionSimple: Esto es una oracion
+  oracionGuardada: Hola soy Goku!
 --- !u!1 &1341137940
 GameObject:
   m_ObjectHideFlags: 0
