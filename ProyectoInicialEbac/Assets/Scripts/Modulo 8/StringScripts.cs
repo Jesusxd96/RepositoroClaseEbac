@@ -18,6 +18,12 @@ public class StringScripts : MonoBehaviour
     string numero1="1500";
     string numero2="7830";
     int res;
+
+    public string oracionSimple = "Esto es una oracion";
+
+
+    /*--------------------------------------------------------------------------------------*/
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,12 +33,8 @@ public class StringScripts : MonoBehaviour
         ImprimirNombre();
         StringOperations();
         Debug.Log("El resultado de la operacion de strings es: " + res);
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        ImprimirOracion();
     }
 
     void ImprimirNombre()
@@ -57,5 +59,18 @@ public class StringScripts : MonoBehaviour
         int.TryParse(numero1,out temp1);
         int.TryParse(numero2, out temp2);
         res = temp1 + temp2;
+    }
+
+    void ImprimirOracion()
+    {//Dentro de este metodo se imprimiran solo los caracteres que se encuentren en un indice par.
+        string nuevaOracion = "";
+        int i = 0;
+        for(i=0; i < oracionSimple.Length; i++)
+        {
+            if (i % 2 == 0){
+                nuevaOracion+=oracionSimple[i].ToString();//Se le agregaran los caracteres
+            }
+        }
+        Debug.Log("La nueva string es: " + nuevaOracion);
     }
 }
