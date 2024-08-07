@@ -12,10 +12,22 @@ public class ClaseNormal
         numero1 = param1;
         numero2 = param2;
     }
+    public ClaseNormal(float param1, float param2)//Constructor 2 - Sobrecarga de metodos
+    {
+        numero1 = (int)param1;
+        numero2 = (int)param2;
+    }
 
     public int SumarEnteros(int a, int b)
     {
         return a + b;
     }
-
+    public float SumarFlotantes(float a,float b)//Sobrecarga de metodos
+    {
+        return a + b;
+    }
+    public static float MultiplicarFlotantes(float a, float b)
+    {
+        return a * b;
+    }
 }
