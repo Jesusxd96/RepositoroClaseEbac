@@ -21,14 +21,22 @@ public class EjerciciosEstructuras : MonoBehaviour
     [Tooltip("Lista de numeros repetidos a ser ordenados en un hashset")]
     public List<string> stringsRepetidos = new List<string>() {"hola","you","hola","tambor","banana","you"};
 
+    /*Variables inciso 4*/
+    //Stack o Pila que sera pasada a una cola
+    Stack<string> pilaPalabras = new Stack<string>();
 
     // Start is called before the first frame update
     void Start()
     {
         //generacionDeNumeros(tamanio, inferior, superior);
         //ordenadoArray(arrayChiquito);
-        listToHashSet(stringsRepetidos);
-
+        //listToHashSet(stringsRepetidos);
+        pilaPalabras.Push("Vamos");
+        pilaPalabras.Push("a");
+        pilaPalabras.Push("ver");
+        pilaPalabras.Push("One");
+        pilaPalabras.Push("Piece");
+        DePilaACola(pilaPalabras);
     }
 
     // Update is called once per frame
@@ -81,8 +89,30 @@ public class EjerciciosEstructuras : MonoBehaviour
         foreach(var palabra in nuevoHash)
         {
             Debug.Log(palabra);
+        }   
+    }
+
+    void DePilaACola(Stack<string> pila)
+    {
+        //Se crea la cola
+        Queue<string> cola = new Queue<string>();
+
+        Debug.Log("Pila antes de pasarse a una cola: ");
+        while(pila.Count > 0)//Mientras la pila no este vacia
+        {
+            Debug.Log(pila.Peek());
+            cola.Enqueue(pila.Peek());//Se le pasara el valor de peek?
+            pila.Pop();
         }
-        
+        Debug.Log("Cola despues de recibir la pila: ");
+        while(cola.Count > 0)
+        {
+            Debug.Log(cola.Peek());
+            cola.Dequeue();//Se saca el valor de la cola
+        }
+        /*Me percate que los valores... quedan iguales hahaha
+         hice unas pruebas de pura logica con unos libros en fisico y en teoria queda igual
+        si hubiese sido de cola a pila, seria mas notorio el cambio de ordenamiento*/
     }
 
 }
