@@ -28,9 +28,11 @@ public class EjerciciosEstructuras : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //generacionDeNumeros(tamanio, inferior, superior);
-        //ordenadoArray(arrayChiquito);
-        //listToHashSet(stringsRepetidos);
+        generacionDeNumeros(tamanio, inferior, superior);
+        ordenadoArray(arrayChiquito);
+        listToHashSet(stringsRepetidos);
+        
+        /*Se le agregaran datos a la pilaPalabras*/
         pilaPalabras.Push("Vamos");
         pilaPalabras.Push("a");
         pilaPalabras.Push("ver");
