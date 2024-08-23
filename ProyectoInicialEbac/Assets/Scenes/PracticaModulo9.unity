@@ -325,6 +325,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c3af8253564e5e44a8866de232c3b329, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tamanio: 5
+  inferior: 1
+  superior: 20
+  arrayChiquito: 020000000700000003000000080000000200000005000000030000000500000003000000
+  stringsRepetidos:
+  - hola
+  - you
+  - hola
+  - tambor
+  - banana
+  - you
 --- !u!1 &1341137940
 GameObject:
   m_ObjectHideFlags: 0
